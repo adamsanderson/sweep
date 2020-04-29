@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "Sweep",
+  "version": "0.0.1",
+  "author": "Adam Sanderson <netghost@gmail.com>",
+
+  "browser_action": {
+    "browser_style": true,
+    "default_title": "Sweep",
+    "default_popup": "popup.html"
+  },
+
+  "background": {
+    "page": "background.html"
+  },
+
+  "permissions": [
+    "tabs"
+  ]
+}

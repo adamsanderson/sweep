@@ -1,0 +1,13 @@
+# Ignore build artifacts and other files.
+.DS_Store
+dist
+node_modules
+web-ext-artifacts
+webpack-profile-data.json
+
+# Ignore my junk drawer of ideas
+TODO
+scratch
+
+# Ignore log files
+yarn-error.log
