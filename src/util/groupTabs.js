@@ -1,9 +1,3 @@
-// {
-//     title: ``,
-//     description: ``,
-//     tabs: […]
-// }
-
 export default function groupTabs(tabs) {
   const getUrl = createUrlMap(tabs)
   const groups = []
