@@ -22,7 +22,7 @@ export default function groupTabs(tabs) {
 
   if (launchers.length > 0) {
     groups.push({
-      title: `Launchers`,
+      title: `Launcher tabs`,
       description: `These tabs are used to launch native applications`,
       tabs: launchers,
     })
@@ -43,7 +43,7 @@ export default function groupTabs(tabs) {
 
   if (blanks.length > 0) {
     groups.push({
-      title: `Blank`,
+      title: `Blank tabs`,
       description: `These tabs are blank`,
       tabs: blanks,
     })
