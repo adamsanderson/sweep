@@ -1,3 +1,2 @@
-import { createBackgroundStore } from './redux/store'
-
-const store = createBackgroundStore()
+// There are no background tasks or interactions yet,
+// though some day… some day there will be.
