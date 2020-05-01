@@ -1,7 +1,7 @@
-Publishing Brook
-================
+Publishing
+==========
 
-In order to publish Brook, you must build a zip file:
+In order to publish, you must build a zip file:
 
 ```
 yarn package
@@ -9,18 +9,8 @@ yarn package
 
 Upload the versioned zip file from the `web-ext-artifacts` directory to mozilla:
 
-https://addons.mozilla.org/en-US/developers/addon/brook-feed-reader/versions/submit/
+https://addons.mozilla.org/en-US/developers/addon/{TODO}/versions/submit/
 
-The source if required is archived in `brook-src.zip`.
+The source is archived in `sweep-src.zip`.
 
-After uploading the zip files, Brook will be available as an addon.
-
-Installing Self Hosted Versions
--------------------------------
-
-You may also upload a self hosted version of Brook.  A signed `xpi` will be 
-available.
-
-To install, open firefox and visit `about:addons`.  
-
-Click the gear icon, and choose `Install Add-on From File…`.
+After uploading the zip files, Sweep will be available as an addon.

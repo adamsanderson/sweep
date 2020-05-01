@@ -12,7 +12,7 @@
     "lint": "eslint src && web-ext lint -s dist/",
     "test": "jest",
     "analyze": "NODE_ENV=production webpack --profile --json > webpack-profile-data.json && webpack-bundle-analyzer webpack-profile-data.json dist",
-    "package": "NODE_ENV=production webpack && web-ext build -s dist && git archive --format=zip -o web-ext-artifacts/brook-src.zip master",
+    "package": "NODE_ENV=production webpack && web-ext build -s dist && git archive --format=zip -o web-ext-artifacts/source.zip master",
     "postpackage": "cat ./docs/publishing.md"
   },
   "author": "Adam Sanderson",
