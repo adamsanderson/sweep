@@ -12,9 +12,14 @@ export default function TabGroupList({tabGroups, onSweep}){
   if (tabGroups.length === 0) return <EmptyState/>
 
   return (
-    <VerticalStack>
-      {tabGroups.map(group => <TabGroup key={group.title} group={group} onSweep={onSweep} /> )}
-    </VerticalStack>
+    <>
+      <h3>Close tabs</h3>
+      <VerticalStack>
+        {tabGroups.map(group => 
+          <TabGroup key={group.title} group={group} onSweep={onSweep} /> 
+        )}
+      </VerticalStack>
+    </>
   )
 }
 
