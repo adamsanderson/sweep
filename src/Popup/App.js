@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import browser from "webextension-polyfill"
 
 import ErrorBoundary from '../components/ErrorBoundary'
 import useTabList from '../hooks/useTabList'

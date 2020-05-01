@@ -14,6 +14,7 @@ TabIcon.propTypes = {
 const Circle = styled.div({
   background: '#eeeeee',
   borderRadius: '50%',
+  border: '1px solid white',
   ...FAVICON_DIMENSIONS
 })
 

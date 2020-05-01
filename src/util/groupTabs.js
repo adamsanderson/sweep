@@ -32,11 +32,9 @@ export default function groupTabs(tabs) {
   [blanks, tabs] = partition(tabs, tab => {
     const url = getUrl(tab)
 
-    if (url.protocol === 'chrome-search:') return true
-
-    if (url.protocol === 'about:') {
-      if (url.pathname === 'blank' || url.pathname === 'newtab') return true
-    }
+    if (url.href === 'about:blank') return true
+    if (url.href === 'about:newtab') return true
+    if (url.href === 'chrome:newtab') return true
 
     return false
   })

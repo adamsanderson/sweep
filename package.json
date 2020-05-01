@@ -8,6 +8,7 @@
     "clean": "rm -rf ./node_modules; rm -rf ./dist",
     "start": "yarn firefox",
     "firefox": "web-ext run -s dist/ --url about:debugging#/runtime/this-firefox",
+    "chrome": "web-ext run -s dist/ -t chromium --url about:blank",
     "lint": "eslint src && web-ext lint -s dist/",
     "test": "jest",
     "analyze": "NODE_ENV=production webpack --profile --json > webpack-profile-data.json && webpack-bundle-analyzer webpack-profile-data.json dist",
@@ -47,7 +48,8 @@
     "react-redux": "^7.2.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.2.0",
-    "webext-redux": "^2.0.1"
+    "webext-redux": "^2.0.1",
+    "webextension-polyfill": "^0.6.0"
   },
   "jest": {
     "setupFiles": [

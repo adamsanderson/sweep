@@ -1,3 +1,4 @@
+import browser from "webextension-polyfill"
 import { useEffect, useState } from 'react'
 
 export default function useTabList() {
