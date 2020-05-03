@@ -6,8 +6,7 @@
 
   "browser_action": {
     "browser_style": true,
-    "default_title": "Sweep",
-    "default_popup": "popup.html"
+    "default_title": "Sweep"
   },
 
   "background": {

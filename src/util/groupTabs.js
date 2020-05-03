@@ -25,6 +25,7 @@ export default function groupTabs(tabs) {
       title: `Launcher tabs`,
       description: `These tabs are used to launch native applications`,
       tabs: launchers,
+      safe: true,
     })
   }
 
@@ -44,6 +45,7 @@ export default function groupTabs(tabs) {
       title: `Blank tabs`,
       description: `These tabs are blank`,
       tabs: blanks,
+      safe: true,
     })
   }
 

@@ -2,6 +2,13 @@ import React from 'react'
 import propTypes from 'prop-types'
 import TabGroup from './TabGroup'
 import { VerticalStack } from '../layouts/Stack'
+import styled from '@emotion/styled'
+import { AlertCircle } from 'react-feather'
+
+const Hint = styled.p({
+  color: '#666666',
+  fontStyle: 'italic',
+})
 
 TabGroupList.propTypes = {
   tabGroups: propTypes.array.isRequired,
@@ -26,8 +33,10 @@ export default function TabGroupList({tabGroups, onSweep}){
 function EmptyState() {
   return (
     <VerticalStack>
-      <p>No more tabs can be automatically swept</p>
+      <p>No more tabs can be swept</p>
       <p>Sweep will watch for tabs left behind by links that launch native applications, blank pages, and duplicate pages.</p>
+
+      <Hint><AlertCircle size='1em' /> Shift click Sweep&rsquo;s icon to close tabs automatically.</Hint>
     </VerticalStack>
   )
 }
