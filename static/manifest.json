@@ -7,10 +7,7 @@
   "browser_action": {
     "browser_style": true,
     "default_title": "Sweep",
-    "default_icon": {
-      "96": "images/Sweep.svg",
-      "48": "images/Sweep.svg"
-    }
+    "default_icon": "images/Sweep.png"
   },
 
   "background": {
