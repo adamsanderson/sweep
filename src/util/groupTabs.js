@@ -1,10 +1,10 @@
 export default function groupTabs(tabs) {
-  const getUrl = createUrlMap(tabs)
+  const getUrlObject = createUrlMap(tabs)
   const groups = []
 
   let launchers
   [launchers, tabs] = partition(tabs, tab => {
-    const url = getUrl(tab)
+    const url = getUrlObject(tab)
 
     // Match Zoom links
     if (url.hostname.endsWith('zoom.us')) {
@@ -31,7 +31,7 @@ export default function groupTabs(tabs) {
 
   let blanks
   [blanks, tabs] = partition(tabs, tab => {
-    const url = getUrl(tab)
+    const url = getUrlObject(tab)
 
     if (url.href === 'about:blank') return true
     if (url.href === 'about:newtab') return true
@@ -49,7 +49,42 @@ export default function groupTabs(tabs) {
     })
   }
 
+  const groupedByUrl = {}
+  let duplicates = []
+  tabs.forEach(tab => {
+    const url = tab.url
+    if (!groupedByUrl[url]) groupedByUrl[url] = []
+    groupedByUrl[url].push(tab)
+  })
+
+  Object.values(groupedByUrl).forEach(groupedTabs => {
+    if (groupedTabs.length > 1) {
+      // Sort descending by tab priority
+      const tabsByAccessTime = groupedTabs.sort((a, b) => getTabPriority(b) - getTabPriority(a))
+      console.log(tabsByAccessTime)
+      console.log(tabsByAccessTime.map(t => t.lastAccessed))
+      duplicates = duplicates.concat(tabsByAccessTime.slice(1))
+    }
+  })
+
+  if (duplicates.length > 0) {
+    groups.push({
+      title: `Duplicate tabs`,
+      description: `These tabs are duplicates of other tabs you have open`,
+      tabs: duplicates,
+    })
+  }
+
   return groups
+}
+
+function getTabPriority(tab) {
+  // Active tabs are always given priority
+  if (tab.active) return Infinity
+  // Firefox tracks access times, more recently accessed tabs should be retained
+  if (tab.lastAccessed) return tab.lastAccessed
+  // As a proxy for recency, assume that tab ids are increasing and indicate more recent tabs
+  return tab.id
 }
 
 function createUrlMap() {

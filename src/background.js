@@ -17,9 +17,11 @@ browser.browserAction.onClicked.addListener((tab, eventData) => {
       browser.tabs.query({}).then(tabs => {
         const groups = groupTabs(tabs)
         groups.forEach(tabGroup => {
-          const ids = tabGroup.tabs.map(tab => tab.id)
+          if (tabGroup.safe) {
+            const ids = tabGroup.tabs.map(tab => tab.id)
 
-          browser.tabs.remove(ids)
+            browser.tabs.remove(ids)
+          }
         })
       })
   } else {
