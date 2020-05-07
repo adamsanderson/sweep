@@ -1,23 +1,27 @@
 # Sweep
 
 Sweep away clutter as you browse.
+Available on the [Chrome Store](https://chrome.google.com/webstore/detail/sweep/oememdjmgcpdnaekpgacmnjmlglbldip).
 
 ## Development
 
-To start developing, run:
+To start developing run:
 
 ```
 yarn install
-yarn build # In one terminal
-yarn start # In another terminal
+yarn build
 ```
 
-To see debugging messages in Firefox, use the `Browser Console`.  To debug, use the `Browser Toolbox`,
-or visit `about:debugging` and click the `debug` button.
+In another terminal you can launch the plugin in Chrome or Firefox:
+```
+yarn chrome
+yarn firefox
+```
 
-[web-ext]: https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Getting_started_with_web-ext
+To debug in Chrome, visit `chrome://extensions/` and turn on Developer Mode, or simply right click the popup.
+To debug in Firefox, click `Inspect` on the entry for Sweep.
 
-To access special debugging menus, shift click the primary menu.
+For more information about how to use web-ext, read their [Getting Started](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Getting_started_with_web-ext) guide.
 
 ## Development Status and Priorities
 

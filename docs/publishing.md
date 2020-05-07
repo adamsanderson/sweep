@@ -7,9 +7,10 @@ In order to publish, you must build a zip file:
 yarn package
 ```
 
-Upload the versioned zip file from the `web-ext-artifacts` directory to mozilla:
+Upload the versioned zip file from the `web-ext-artifacts` directory to
 
-https://addons.mozilla.org/en-US/developers/addon/{TODO}/versions/submit/
+* Chrome store: https://chrome.google.com/webstore/devconsole
+* Mozilla: https://addons.mozilla.org/en-US/developers/addons
 
 The source is archived in `sweep-src.zip`.
 
