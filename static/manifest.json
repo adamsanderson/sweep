@@ -3,6 +3,12 @@
   "name": "Sweep",
   "version": "0.0.1",
   "author": "Adam Sanderson <netghost@gmail.com>",
+  "description": "Sweep away clutter as you browse",
+  "icons": {
+    "48": "images/Sweep_48.png",
+    "64": "images/Sweep_64.png",
+    "128": "images/Sweep_128.png"
+  },
 
   "browser_action": {
     "browser_style": true,
