@@ -61,8 +61,6 @@ export default function groupTabs(tabs) {
     if (groupedTabs.length > 1) {
       // Sort descending by tab priority
       const tabsByAccessTime = groupedTabs.sort((a, b) => getTabPriority(b) - getTabPriority(a))
-      console.log(tabsByAccessTime)
-      console.log(tabsByAccessTime.map(t => t.lastAccessed))
       duplicates = duplicates.concat(tabsByAccessTime.slice(1))
     }
   })
