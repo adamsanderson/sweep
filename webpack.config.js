@@ -11,6 +11,7 @@ module.exports = {
     // Each entry declares an entrypoint to be built.
     background: './src/background.js',
     popup: './src/Popup/index.js',
+    options: './src/Options/index.js',
   },
   output: {
     // Write each source entry into the extension dist folder named

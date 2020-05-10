@@ -1,0 +1,1 @@
+export const AUTO_SWEEP_OPTION = 'autoSweep'

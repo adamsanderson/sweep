@@ -18,7 +18,7 @@ export default function App(){
   const tabGroups = groupTabs(tabs)
 
   return (
-    <ErrorBoundary message="An error ocurred while.">
+    <ErrorBoundary message="An error ocurred.">
       <AppContainer>
         <TabGroupList tabGroups={tabGroups} onSweep={onSweep} />
       </AppContainer>
