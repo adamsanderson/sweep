@@ -1,6 +1,6 @@
 {
   "name": "browser-sweep",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Sweep away clutter as you browse",
   "main": "index.js",
   "scripts": {
