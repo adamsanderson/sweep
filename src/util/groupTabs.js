@@ -9,6 +9,7 @@ export default function groupTabs(tabs) {
     // Match Zoom links
     if (url.hostname.endsWith('zoom.us')) {
       if (url.pathname.startsWith('/j/')) return true
+      if (url.pathname.startsWith('/s/')) return true
       if (url.pathname.startsWith('/my/')) return true
     }
 
