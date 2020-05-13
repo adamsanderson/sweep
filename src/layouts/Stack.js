@@ -13,6 +13,18 @@ export const VerticalStack = styled.div({
   })
 )
 
+export const ReverseVerticalStack = styled.div({
+  position: 'relative',
+  display: 'flex',
+  flexDirection: 'column-reverse',
+},
+  (props) => ({
+    '& > * + *': {
+      marginBottom: props.gap || designTokens.gap.medium
+    }
+  })
+)
+
 export const HorizontalStack = styled.div({
   position: 'relative',
   display: 'flex',
@@ -21,6 +33,18 @@ export const HorizontalStack = styled.div({
   (props) => ({
     '& > * + *': {
       marginLeft: props.gap || designTokens.gap.small
+    }
+  })
+)
+
+export const ReverseHorizontalStack = styled.div({
+  position: 'relative',
+  display: 'flex',
+  flexDirection: 'row-reverse',
+},
+  (props) => ({
+    '& > * + *': {
+      marginRight: props.gap || designTokens.gap.small
     }
   })
 )

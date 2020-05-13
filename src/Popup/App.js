@@ -6,6 +6,7 @@ import ErrorBoundary from '../components/ErrorBoundary'
 import useTabList from '../hooks/useTabList'
 import groupTabs from '../util/groupTabs'
 import TabGroupList from '../components/TabGroupList'
+import Footer from './Footer'
 import tokens from '../designTokens'
 
 const AppContainer = styled.div({
@@ -21,6 +22,7 @@ export default function App(){
     <ErrorBoundary message="An error ocurred.">
       <AppContainer>
         <TabGroupList tabGroups={tabGroups} onSweep={onSweep} />
+        <Footer/>
       </AppContainer>
     </ErrorBoundary>
   )
