@@ -9,6 +9,9 @@ const FAVICON_DIMENSIONS = {
 
 TabIcon.propTypes = {
   tab: propTypes.object.isRequired,
+  onClick: propTypes.func,
+  onOver: propTypes.func,
+  onOut: propTypes.func,
 }
 
 const Circle = styled.div({
@@ -18,10 +21,26 @@ const Circle = styled.div({
   ...FAVICON_DIMENSIONS
 })
 
-export default function TabIcon({tab}) {
+const Favicon = styled.img({
+  ...FAVICON_DIMENSIONS
+})
+
+export default function TabIcon({ tab, onOver, onOut, onClick }) {
+  function handleClick(event) {
+    onClick && onClick(event, tab)
+  }
+
+  function handleOver(event) {
+    onOver && onOver(event, tab)
+  }
+
+  function handleOut(event) {
+    onOut && onOut(event, tab)
+  }
+
   return (
     tab.favIconUrl ?
-      <img src={tab.favIconUrl} title={tab.title} {...FAVICON_DIMENSIONS}  /> :
-      <Circle title={tab.title} />
+      <Favicon src={tab.favIconUrl} alt={tab.title} onMouseOver={handleOver} onMouseOut={handleOut} onClick={handleClick} /> :
+      <Circle title={tab.title} onMouseOver={handleOver} onMouseOut={handleOut} onClick={handleClick} />
   )
 }
