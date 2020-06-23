@@ -17,6 +17,8 @@ export default function groupTabs(tabs) {
     // Match Slack links
     if (url.hostname.endsWith('slack.com')) {
       if (url.pathname.startsWith('/archives/')) return true
+      if (url.pathname.startsWith('/app_redirect')) return true
+      if (url.pathname.includes('/signin_redirect')) return true
     }
 
     return false
