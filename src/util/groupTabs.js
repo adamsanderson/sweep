@@ -11,6 +11,7 @@ export default function groupTabs(tabs) {
       if (url.pathname.startsWith('/j/')) return true
       if (url.pathname.startsWith('/s/')) return true
       if (url.pathname.startsWith('/my/')) return true
+      if (url.pathname.startsWith('/postattendee/')) return true
     }
 
     // Match Slack links
