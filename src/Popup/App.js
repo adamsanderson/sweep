@@ -4,7 +4,7 @@ import browser from "webextension-polyfill"
 
 import ErrorBoundary from '../components/ErrorBoundary'
 import useTabList from '../hooks/useTabList'
-import groupTabs from '../util/groupTabs'
+import categorizeTabs from '../lib/categorizeTabs'
 import TabGroupList from '../components/TabGroupList'
 import Footer from './Footer'
 import tokens from '../designTokens'
@@ -16,7 +16,7 @@ const AppContainer = styled.div({
 
 export default function App(){
   const tabs = useTabList()
-  const tabGroups = groupTabs(tabs)
+  const tabGroups = categorizeTabs(tabs)
 
   return (
     <ErrorBoundary message="An error ocurred.">

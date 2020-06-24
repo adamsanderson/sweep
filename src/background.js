@@ -1,5 +1,5 @@
 import browser from "webextension-polyfill"
-import groupTabs from "./util/groupTabs"
+import categorizeTabs from "./lib/categorizeTabs"
 import { initSupportData } from "./util/supports"
 import { AUTO_SWEEP_OPTION } from "./constants"
 
@@ -35,7 +35,7 @@ browser.idle.onStateChanged.addListener((idleState) => {
 
 function closeSafeTabs({keepActive = false}) {
   browser.tabs.query({}).then(tabs => {
-    const groups = groupTabs(tabs)
+    const groups = categorizeTabs(tabs)
     groups.forEach(tabGroup => {
       if (tabGroup.safe) {
         let tabs = tabGroup.tabs
