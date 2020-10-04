@@ -42,9 +42,11 @@ module.exports = {
       // use 'development' unless process.env.NODE_ENV is defined
       NODE_ENV: 'development',
     }),
-    new CopyPlugin([
-      {from: './static'}
-    ])
+    new CopyPlugin({
+      patterns: [
+        { from: './static' }
+      ]
+    })
   ],
   optimization: {
     splitChunks: {
