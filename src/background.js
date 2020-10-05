@@ -33,7 +33,7 @@ browser.idle.onStateChanged.addListener((idleState) => {
   }
 })
 
-function closeSafeTabs({keepActive = false}) {
+function closeSafeTabs({keepActive = false} = {}) {
   browser.tabs.query({}).then(tabs => {
     const groups = categorizeTabs(tabs)
     groups.forEach(tabGroup => {
